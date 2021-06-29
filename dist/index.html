@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello Webpack</title>
+		<link rel="stylesheet" href="./main.css" />
+		<style>
+			div {
+				text-align: center;
+				margin-top: 2rem;
+			}
+			button {
+				margin-top: 4rem;
+			}
+
+			header {
+				overflow: hidden;
+			}
+
+			input[type="radio"] {
+				position: absolute;
+				left: -9999px;
+			}
+			#chord-1:checked #label-1 {
+				background: red;
+			}
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+			}
+			li {
+				flex: 1;
+			}
+			label {
+				display: block;
+				text-align: center;
+				padding: 0.5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="tone4">
+			<div class="field">
+				<label for="gain">Gain</label>
+				<div class="control">
+					<input
+						type="range"
+						value="0.2"
+						max="1"
+						step="0.1"
+						min="0"
+						id="gain"
+					/>
+				</div>
+			</div>
+
+			<div class="container">
+				<span class="select">
+					<select name="synth-type" id="synth-type">
+						<option value="Synth" selected>Synth</option>
+						<option value="AMSynth">AMSynth</option>
+						<option value="FMSynth">FMSynth</option>
+					</select>
+				</span>
+			</div>
+
+			<div class="container">
+				<span class="select">
+					<select name="oscillator-type" id="oscillator-type">
+						<option value="triangle" selected>triangle</option>
+						<option value="sawtooth">sawtooth</option>
+						<option value="sine">sine</option>
+						<option value="square">square</option>
+					</select>
+				</span>
+			</div>
+
+			<div class="container">
+				<select name="oscillator-partials" id="oscillator-partials">
+					<option value="0">none</option>
+					<option value="2">2</option>
+					<option value="4">4</option>
+					<option value="8">8</option>
+					<option value="16">16</option>
+					<option value="32">32</option>
+					<option value="64">64</option>
+				</select>
+			</div>
+
+			<div class="field">
+				<label for="envelope-attack">Attack</label>
+				<div class="control">
+					<input
+						type="range"
+						value="0"
+						max="9"
+						step="1"
+						min="0"
+						id="envelope-attack"
+					/>
+				</div>
+			</div>
+
+			<div class="field">
+				<label for="envelope-decay">Decay</label>
+				<div class="control">
+					<input
+						type="range"
+						value="0"
+						max="9"
+						step="1"
+						min="0"
+						id="envelope-decay"
+					/>
+				</div>
+			</div>
+
+			<div class="field">
+				<label for="envelope-sustain">Sustain</label>
+				<div class="control">
+					<input
+						type="range"
+						value="0"
+						max="9"
+						step="1"
+						min="0"
+						id="envelope-sustain"
+					/>
+				</div>
+			</div>
+
+			<div class="field">
+				<label for="envelope-release">Release</label>
+				<div class="control">
+					<input
+						type="range"
+						value="0"
+						max="9"
+						step="1"
+						min="0"
+						id="envelope-release"
+					/>
+				</div>
+			</div>
+
+			<div class="field">
+				<button class="button" id="toggle">
+					<span>Play</span>
+				</button>
+			</div>
+		</div>
+		<div id="tone">
+			<h1>Tone</h1>
+
+			<div class="osc-div">
+				<div class="osc osc1">
+					<h1>OSC 1</h1>
+					<!-- <button id="osc-1-play">Play</button> -->
+					<span id="osc-1-click"></span>
+					<span id="osc-1-time"></span>
+					<span id="osc-1-f"></span>
+				</div>
+
+				<div>
+					<button id="play">Play</button>
+				</div>
+
+				<div class="osc osc-2">
+					<h1>OSC 2</h1>
+					<!-- <button id="osc-2-play">Play</button> -->
+					<span id="osc-2-click"></span>
+					<span id="osc-2-time"></span>
+					<span id="osc-2-f"></span>
+				</div>
+			</div>
+		</div>
+		<div id="test">
+			<h1>Hello Webpack</h1>
+
+			<header>
+				<input
+					id="chord-1"
+					value="1"
+					type="radio"
+					name="chord"
+					checked
+				/>
+				<input id="chord-2" value="2" type="radio" name="chord" />
+				<input id="chord-3" value="3" type="radio" name="chord" />
+				<input id="chord-4" value="4" type="radio" name="chord" />
+				<input id="chord-5" value="5" type="radio" name="chord" />
+				<ul>
+					<li><label id="label-1" for="chord-1">1</label></li>
+					<li><label id="label-2" for="chord-2">2</label></li>
+					<li><label id="label-3" for="chord-3">3</label></li>
+					<li><label id="label-4" for="chord-4">4</label></li>
+					<li><label id="label-5" for="chord-5">5</label></li>
+				</ul>
+			</header>
+
+			<div class="row">
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="row">
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="row">
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+
+			<button id="play">play</button>
+			<button id="seq">play seq</button>
+			<button id="oct">play oct</button>
+		</div>
+		<div id="metro">
+			<button id="togglePlay">play</button>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.7.1/Tone.js"></script>
+
+		<!-- <script src="./tone.js"></script> -->
+		<!-- <script
+			src="https://cdnjs.cloudflare.com/ajax/libs/tone/0.12.63/Tone.js"
+			integrity="sha512-O/RtxgvyFpE3EdDw+XtP65M+3cjrkzRbhd22ab3lF34p9Hi6ll814RpDo0xuPQPYgwKN2+cy/f9t9QqJxHZPrw=="
+			crossorigin="anonymous"
+		></script> -->
+		<!-- <script
+			src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.17/Tone.js"
+			integrity="sha512-EIXtbmVz5SVaJkojf2cSv73z6rh3PKBHOdXVvHEUjHSYrIQd1RaaJnosglDSXuMaRxZr5rk6QdYGm2WcZX/U1Q=="
+			crossorigin="anonymous"
+		></script> -->
+
+		<script src="../src/index.js"></script>
+	</body>
+</html>
